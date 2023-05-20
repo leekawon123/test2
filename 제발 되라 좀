@@ -1,0 +1,80 @@
+package test;
+
+import java.util.Scanner;
+
+public class Please2 {
+
+	public static void main(String[] args) {
+
+		Scanner scanner=new Scanner(System.in);
+		
+		int intArray[][]=new int[5][5];
+		
+		intArray[0][0]=1;
+		
+		int a=0;
+		
+		int d=0;
+		
+		System.out.print("시작할 때 배열을 보여주고 시작하고 싶은데 어캐 해야 할지도 모르고 너무 힘들어서 이글로 때우겠습니다 미안합니다.");
+		
+		while(true) {
+			
+			int n=scanner.nextInt();
+			
+			if(n==1) {
+				a++;
+				intArray[d][a]=1;
+				intArray[d][a-1]=0;
+				if(a!=4) {
+					intArray[d][a+1]=0;
+				}
+			}
+			
+			if(n==-1) {
+				a--;
+				intArray[d][a]=1;
+				if(a!=0) {
+					intArray[d][a-1]=0;
+				}
+				intArray[d][a+1]=0;
+			}
+			
+			if(n==2) {
+				d++;
+				intArray[d][a]=1;
+				intArray[d-1][a]=0;
+				if(d!=4) {
+					intArray[d+1][a]=0;
+				}
+			}
+			
+			if(n==-2) {
+				d--;
+				intArray[d][a]=1;
+				if(d!=0) {
+					intArray[d-1][a]=0;
+				}
+				intArray[d+1][a]=0;
+					
+			}
+			
+			
+			
+			for(int b=0; b<intArray.length; b++) {
+				for(int c=0; c<intArray.length; c++) {
+					System.out.print(intArray[b][c]);
+				}
+				System.out.println();
+			}
+			
+			System.out.println();
+			
+			if(n==0) {
+				System.out.print("끝!");
+				break;
+			}
+		}
+	}
+
+}
