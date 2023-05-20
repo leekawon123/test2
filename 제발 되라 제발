@@ -1,0 +1,46 @@
+package test;
+
+import java.util.Scanner;
+
+public class Please {
+
+	public static void main(String[] args) {
+
+		Scanner scanner=new Scanner(System.in);
+		
+		int intArray[]= {1, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		
+		int a=0;
+		
+		int i=0;
+		
+		while(true) {
+			
+			int num=scanner.nextInt();
+			
+			if(num==1) {
+				a++;
+			}
+			
+			if(num==-1) {
+				a--;
+			}
+			
+			if(a>1) {
+				intArray[a-2]=0;
+			}
+			intArray[a-1]=1;
+			
+			intArray[a]=0;
+			
+			for(i=0; i<9; i++) {
+				System.out.print(intArray[i]);
+			}
+			
+			System.out.println();
+			
+		}
+		
+	}
+
+}
